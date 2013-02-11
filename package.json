@@ -10,7 +10,8 @@
     "jade": "*",
     "coffee-script": "~1.4.0"
   },
-  "devDependencies":{
-    "node-dev": "~0.2.10"
+  "devDependencies": {
+    "node-dev": "~0.2.10",
+    "mocha": "~1.8.1"
   }
 }
