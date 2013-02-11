@@ -1,8 +1,13 @@
-form(action='/sessions', method='post')
-  label
-    | Username
-    input(type='text', name='user')
-  label
-    | Password
-    input(tpye='password', name='password')
-  input(type='submit', name='submit')
+extends ../../../views/layout
+
+block content
+
+  #container
+    form(action='/sessions', method='post',class='form-login')
+      h2
+        | Please Sign in
+      input(type='text', name='user',class='input-block-level',placeholder='Username')
+      input(type='password', name='password',class='input-block-level',placeholder='Password')
+      
+      br
+      input(type='submit', name='submit',class='btn')
