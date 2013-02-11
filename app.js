@@ -27,6 +27,10 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+app.configure('test', function(){
+  app.set('port',3001);
+});
+
 require('./apps/authentication/routes')(app)
 
 http.createServer(app).listen(app.get('port'), function(){
