@@ -3,7 +3,19 @@ html
   head
     title= title
     link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/css/#{stylesheet}.css')
     script(src='/js/bootstrap.min.js')
   body
+    
+    .container-narrow
+      .masthead
+        ul.nav.nav-pills.pull-right
+          li: a(href='#') home
+          li: a(href='/login') login
+        h3.muted TeamWork
+
+      hr
+            
+
     block content
