@@ -10,6 +10,8 @@ var express = require('express')
   , flash = require('connect-flash')
   , RedisStore = require('connect-redis')(express);
 
+require('express-namespace');
+
 var app = express();
 
 app.configure(function(){
