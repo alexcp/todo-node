@@ -7,6 +7,11 @@ describe 'Task', ->
     before ->
       task = new Task {name:'Make a list'}
 
-    it "sets name"
-    it "default to a state"
-    it "generates Id"
+    it "sets name", ->
+      assert.equal task.name, 'Make a list'
+
+    it "default to inactive status", ->
+      assert.equal task.status, 'inactive'
+
+    it "generates Id", ->
+      assert.equal task.id, 'Make-a-list'
