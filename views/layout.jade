@@ -16,6 +16,11 @@ html
         h3.muted TeamWork
 
       hr
-            
 
-    block content
+      - var flashTypes = ['info','error']
+      each flashType in flashTypes
+        if flash[flashType]
+          .alert(class='alert-'+flashType)
+            = flash[flashType]
+
+      block content

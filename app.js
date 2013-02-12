@@ -26,9 +26,11 @@ app.configure(function(){
     store: new RedisStore
   }));
   app.use(flash());
+
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
+
 
 app.configure('development', function(){
   app.use(express.errorHandler());
@@ -37,6 +39,8 @@ app.configure('development', function(){
 app.configure('test', function(){
   app.set('port',3001);
 });
+
+require('./middleware/upgrade')(app);
 
 require('./apps/authentication/routes')(app)
 
