@@ -17,7 +17,7 @@ html
 
       hr
 
-      - var flashTypes = ['info','error']
+      - var flashTypes = ['info','error','success']
       each flashType in flashTypes
         if flash[flashType]
           .alert(class='alert-'+flashType)
