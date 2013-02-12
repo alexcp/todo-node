@@ -1,13 +1,14 @@
+require('coffee-script');
 
 /**
  * Module dependencies.
  */
 
-require('coffee-script');
-
 var express = require('express')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , flash = require('connect-flash')
+  , RedisStore = require('connect-redis')(express);
 
 var app = express();
 
@@ -19,6 +20,12 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser());
+  app.use(express.session({
+    secret: "12abeeefeuiohfebfeeb14z",
+    store: new RedisStore
+  }));
+  app.use(flash());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
