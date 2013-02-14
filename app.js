@@ -42,6 +42,7 @@ app.configure('test', function(){
   app.set('port',3001);
 });
 
+require('./apps/helpers')(app);
 require('./middleware/upgrade')(app);
 
 require('./apps/authentication/routes')(app)

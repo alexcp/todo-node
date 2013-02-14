@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
+echo "Make sure redis is running"
+
 ./node_modules/node-dev/node-dev app.js
