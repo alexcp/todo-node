@@ -13,5 +13,8 @@ describe "User", ->
     it "should hash the password", ->
       assert.notEqual user.password, "12345"
 
+    it "should perform basic validation", ->
+      assert.ok user.isValid
+
     it "should check if password is valid", ->
-      assert.ok user.try_password "12345"
+      assert.ok user.tryPassword "12345"
