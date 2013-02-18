@@ -1,8 +1,6 @@
-redis = require('redis').createClient()
+Model = require '../models/model'
 
-class Task
-  @key: ->
-    "Task:#{process.env.NODE_ENV}"
+class Task extends Model
 
   constructor: (attributes) ->
     @[key] = value for key, value of attributes
@@ -13,15 +11,5 @@ class Task
     unless @status
       @status = 'inactive'
     @generateId()
-
-  generateId: ->
-    if not @id and @name
-      @id = @name.replace /\s/g, '-'
-
-  save: (callback) ->
-    @generateId()
-    redis.hset Task.key(), @id, JSON.stringify(@), (err, code) =>
-      callback null, @
-
 
 module.exports = Task
