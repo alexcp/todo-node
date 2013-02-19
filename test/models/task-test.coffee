@@ -14,5 +14,4 @@ describe 'Task', ->
       assert.equal task.status, 'inactive'
 
     it "generates Id", ->
-      task.generateId()
-      assert.equal task.id, 1
+      assert.ok task.id

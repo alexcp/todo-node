@@ -1,6 +1,7 @@
+Model = require '../models/model'
 bcrypt = require('bcrypt')
 
-class User
+class User extends Model
 
   constructor: (attributes) ->
     @[key] = value for key, value of attributes

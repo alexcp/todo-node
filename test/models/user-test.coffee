@@ -18,3 +18,13 @@ describe "User", ->
 
     it "should check if password is valid", ->
       assert.ok user.tryPassword "12345"
+
+  describe "find", ->
+    user = null
+    before ->
+      user = new User {username: "test", email: "test@example.com", password: "12345"}
+      user.save()
+
+    it "should find a user with it's id", ->
+      assert.equal User.find(user.id), user
+
